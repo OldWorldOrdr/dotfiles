@@ -17,7 +17,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND=" $left%{$fg_bold[blue]%}•|$right"
 ZSH_THEME_GIT_PROMPT_AHEAD=" $left%{$fg_bold[blue]%}|•$right"
 
 git_info='$(git_prompt_info)$(git_prompt_status)'
-directory_path='$left%{$fg[green]%}%~$right'
+directory_path='$left%{$fg[green]%} %~$right'
 return_code='%(?,, $left%{$fg[red]%}%?$right)'
 
 RPROMPT="${directory_path}${git_info}${return_code}"
