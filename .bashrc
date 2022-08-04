@@ -1,13 +1,18 @@
 [ -d $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
 
-clear
-pfetch
-
-PS1="\[\e[94m\]\w \\$ \[\e[m\]"
-
 alias cls='clear'
 alias ls='ls --group-directories-first --color -A'
 alias l='ls --group-directories-first --color -Alh'
-alias update='topgrade'
+alias update='sudo apk upgrade'
 alias ..='cd ..'
 alias ...='cd ../..'
+
+if [ "$EUID" -eq 0 ]; then
+    PS1='\[\e[91m\]\w \\$ \[\e[m\]'
+else
+    PS1='\e[38;5;235m\e[48;5;235m\e[32m\w\e[m\e[38;5;235m\e[m$(git-ps1.sh) '
+    #PS1='\[\e[94m\]\w \\$ \[\e[m\]'
+
+    clear
+    pfetch
+fi
