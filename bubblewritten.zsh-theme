@@ -1,6 +1,13 @@
 # bubblewritten
 # base theme: typewritten
 
+source /usr/bin/git-prompt.sh
+
+# load colors
+setopt PROMPT_SUBST
+autoload colors
+colors
+
 # git status variables
 left="%{$FG[236]%}%{$BG[236]%}"
 right="%{$reset_color%}%{$FG[236]%}%{$reset_color%}"
