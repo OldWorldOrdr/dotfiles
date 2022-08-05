@@ -1,6 +1,7 @@
 [ -d $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
 
 clear
+pfetch
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -10,8 +11,4 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-alias cls='clear'
-alias ls='lsd -A --group-directories-first'
-alias update='topgrade'
-
-pfetch
+source $HOME/.aliasrc

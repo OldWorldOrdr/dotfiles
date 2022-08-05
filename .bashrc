@@ -1,12 +1,5 @@
 [ -d $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
 
-alias cls='clear'
-alias ls='ls --group-directories-first --color -A'
-alias l='ls --group-directories-first --color -Alh'
-alias update='sudo apk upgrade --available --latest'
-alias ..='cd ..'
-alias ...='cd ../..'
-
 if [ "$EUID" -eq 0 ]; then
     PS1='\e[91m\w \$ \e[m'
 else
@@ -15,3 +8,5 @@ else
     clear
     pfetch
 fi
+
+source $HOME/.aliasrc
