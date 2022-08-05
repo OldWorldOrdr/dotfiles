@@ -3,7 +3,7 @@
 alias cls='clear'
 alias ls='ls --group-directories-first --color -A'
 alias l='ls --group-directories-first --color -Alh'
-alias update='sudo apk upgrade'
+alias update='sudo apk upgrade --available --latest'
 alias ..='cd ..'
 alias ...='cd ../..'
 
