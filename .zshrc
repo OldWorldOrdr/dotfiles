@@ -1,14 +1,17 @@
-[ -d $HOME/.local/bin ] && export PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
-clear
-pfetch
+source "$HOME/.aliasrc"
 
-export ZSH="$HOME/.oh-my-zsh"
+if [ "$EUID" -eq 0 ]; then
+    PROMPT=$'%{\e[91m%}%~ # %{\e[m%}'
+else
+    PROMPT=$'%{\e[94m%}%~ $ %{\e[m%}'
 
-ZSH_THEME="bubblewritten"
+    clear
+    pfetch
+fi
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-
-source $ZSH/oh-my-zsh.sh
-
-source $HOME/.aliasrc
+for i in $HOME/.local/share/zsh/plugins/*/*.plugin.zsh; do
+    source "$i"
+done
+unset i
