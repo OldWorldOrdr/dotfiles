@@ -22,6 +22,7 @@ set tabstop=4
 set mouse=a
 set dir=~/.cache/vim
 set history=1000
+au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['Lines: %L'])
 
 lua << EOF
  require'alpha'.setup(require'alpha.themes.dashboard'.config)
