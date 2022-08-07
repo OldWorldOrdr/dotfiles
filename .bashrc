@@ -1,6 +1,13 @@
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
-source "$HOME/.aliasrc"
+if [ "$XDG_CONFIG_HOME" ]; then
+    CONF="$XDG_CONFIG_HOME"
+else
+    CONF="$HOME/.config"
+fi
+
+[ -f "$CONF/env" ] && source "$CONF/env"
+[ -f "$CONF/aliases" ] && source "$CONF/aliases"
 
 if [ "$EUID" -eq 0 ]; then
     PS1="\[\e[91m\]\w \$ \[\e[m\]"
