@@ -2,7 +2,6 @@ call plug#begin()
     Plug 'ryanoasis/vim-devicons'
     Plug 'ayu-theme/ayu-vim'
     Plug 'goolord/alpha-nvim'
-    Plug 'ms-jpq/chadtree'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'dense-analysis/ale'
