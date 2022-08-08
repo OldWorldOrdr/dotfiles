@@ -14,11 +14,6 @@ else
     CONF="$HOME/.config"
 fi
 
-for i in $ZSH/plugins/*/*.plugin.zsh; do
-    source "$i"
-done
-unset i
-
 [ -f "$CONF/env" ] && source "$CONF/env"
 [ -f "$CONF/aliases" ] && source "$CONF/aliases"
 
@@ -30,3 +25,8 @@ else
     clear
     pfetch
 fi
+
+for i in $ZSH/plugins/*/*.plugin.zsh; do
+    source "$i"
+done
+unset i
