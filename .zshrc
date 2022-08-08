@@ -1,6 +1,6 @@
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
-autoload -U compinit; compinit
+autoload -U compinit && compinit
 
 if [ "$XDG_DATA_HOME" ]; then
     ZSH="$XDG_DATA_HOME/zsh"
