@@ -3,11 +3,11 @@ call plug#begin()
     Plug 'ayu-theme/ayu-vim'
     Plug 'goolord/alpha-nvim'
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'ayu-theme/ayu-vim-airline'
     Plug 'dense-analysis/ale'
 call plug#end()
 
-let g:airline_theme='atomic'
+let g:airline_theme='ayu'
 set termguicolors
 let ayucolor="dark"
 colorscheme ayu
