@@ -4,10 +4,10 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'ayu-theme/ayu-vim-airline'
     Plug 'dense-analysis/ale'
-    Plug 'ms-jpq/chadtree'
     Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
     Plug 'kyazdani42/nvim-web-devicons'
-    Plug 'romgrk/barbar.nvim'
+    Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+    Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
 let g:airline_theme='ayu'
@@ -29,9 +29,15 @@ au User AirlineAfterInit  :let g:airline_section_z = airline#section#create(['Li
 lua << EOF
     require'alpha'.setup(require'alpha.themes.dashboard'.config)
     require("toggleterm").setup{}
+    require("nvim-tree").setup()
+    require("bufferline").setup{
+    options = {
+        separator_style = "slant",
+        },
+    }
 EOF
 
-nnoremap <C-n> :CHADopen<CR>
+nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <C-o> :ToggleTerm<CR>
 nnoremap <silent>    <A-,> <Cmd>BufferPrevious<CR>
 nnoremap <silent>    <A-.> <Cmd>BufferNext<CR>
