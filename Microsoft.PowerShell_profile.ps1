@@ -9,8 +9,5 @@ $ESC = [char]27
 
 function prompt {"$ESC[94m$(Get-Location) $ $ESC[0m"}
 
-Import-Module PSReadLine
-Set-PSReadLineOption -PredictionSource History
-
 clear
 pfetch
