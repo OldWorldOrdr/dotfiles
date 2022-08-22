@@ -18,9 +18,9 @@ fi
 [ -f "$CONF/aliases" ] && source "$CONF/aliases"
 
 if [ "$EUID" -eq 0 ]; then
-    PROMPT=$'%{\e[91m%}%~ # %{\e[m%}'
+    PROMPT=$'%{\e[91m%}%~ # %{\e[0m%}'
 else
-    PROMPT=$'%{\e[94m%}%~ $ %{\e[m%}'
+    PROMPT=$'%{\e[94m%}%~ $ %{\e[0m%}'
 
     clear
     pfetch
