@@ -9,6 +9,7 @@ call plug#begin()
     Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
 
+set noshowmode
 set termguicolors
 colorscheme ayu
 set number
