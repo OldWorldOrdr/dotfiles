@@ -26,7 +26,7 @@ else
     pfetch
 fi
 
-for i in $ZSH/plugins/*/*.plugin.zsh; do
-    source "$i"
+for plug in $ZSH/plugins/*/*.plugin.zsh; do
+    source "$plug"
 done
-unset i
+unset plug
