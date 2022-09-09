@@ -9,6 +9,8 @@ fi
 [ -f "$CONF/env" ] && source "$CONF/env"
 [ -f "$CONF/aliases" ] && source "$CONF/aliases"
 
+HISTFILE="$CONF/history"
+
 if [ "$EUID" -eq 0 ]; then
     PS1="\[\e[91m\]\w \\$ \[\e[0m\]"
 else

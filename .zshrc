@@ -17,6 +17,11 @@ fi
 [ -f "$CONF/env" ] && source "$CONF/env"
 [ -f "$CONF/aliases" ] && source "$CONF/aliases"
 
+HISTFILE="$CONF/history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 if [ "$EUID" -eq 0 ]; then
     PROMPT=$'%{\e[91m%}%~ # %{\e[0m%}'
 else
