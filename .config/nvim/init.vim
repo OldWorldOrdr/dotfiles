@@ -160,9 +160,17 @@ lua << EOF
             lualine_x = {},
         },
     }
+
+    local Terminal  = require('toggleterm.terminal').Terminal
+    local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
+
+    function _lazygit_toggle()
+        lazygit:toggle()
+    end
 EOF
 
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <C-o> :ToggleTerm<CR>
-nnoremap <silent>    <A-,> <Cmd>BufferLineCyclePrev<CR>
-nnoremap <silent>    <A-.> <Cmd>BufferLineCycleNext<CR>
+nnoremap <silent> <C-n> :NvimTreeToggle<CR>
+nnoremap <silent> <C-o> :ToggleTerm<CR>
+nnoremap <silent> <A-,> :BufferLineCyclePrev<CR>
+nnoremap <silent> <A-.> :BufferLineCycleNext<CR>
+nnoremap <silent> <C-g> :lua _lazygit_toggle()<CR>
