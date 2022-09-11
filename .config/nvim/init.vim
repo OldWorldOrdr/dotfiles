@@ -7,6 +7,8 @@ call plug#begin()
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
     Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'ms-jpq/coq_nvim'
 call plug#end()
 
 set noshowmode
