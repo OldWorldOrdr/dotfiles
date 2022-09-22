@@ -1,11 +1,10 @@
 # shellcheck disable=SC2034,SC1091
-[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
-
 autoload -U compinit && compinit
 
 [ "$XDG_CONFIG_HOME" ] && CONF="$XDG_CONFIG_HOME" || CONF="$HOME/.config"
-[ -d "$CONF" ] || mkdir -p "$CONF"
 
+[ -d "$CONF" ] || mkdir -p "$CONF"
+[ -d "$CONF/bin" ] && export PATH="$CONF/bin:$PATH"
 [ -f "$CONF/env" ] && . "$CONF/env"
 [ -f "$CONF/aliases" ] && . "$CONF/aliases"
 
