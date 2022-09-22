@@ -1,21 +1,13 @@
+# shellcheck disable=SC2034,SC1091
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
 autoload -U compinit && compinit
 
-if [ "$XDG_DATA_HOME" ]; then
-    ZSH="$XDG_DATA_HOME/zsh"
-else
-    ZSH="$HOME/.local/share/zsh"
-fi
+[ "$XDG_CONFIG_HOME" ] && CONF="$XDG_CONFIG_HOME" || CONF="$HOME/.config"
+[ -d "$CONF" ] || mkdir -p "$CONF"
 
-if [ "$XDG_CONFIG_HOME" ]; then
-    CONF="$XDG_CONFIG_HOME"
-else
-    CONF="$HOME/.config"
-fi
-
-[ -f "$CONF/env" ] && source "$CONF/env"
-[ -f "$CONF/aliases" ] && source "$CONF/aliases"
+[ -f "$CONF/env" ] && . "$CONF/env"
+[ -f "$CONF/aliases" ] && . "$CONF/aliases"
 
 HISTFILE="$CONF/history"
 HISTSIZE=10000
@@ -31,7 +23,7 @@ else
     pfetch
 fi
 
-for plug in $ZSH/plugins/*/*.plugin.zsh; do
+for plug in "$CONF"/zsh/plugins/*/*.plugin.zsh; do
     source "$plug"
 done
 unset plug
