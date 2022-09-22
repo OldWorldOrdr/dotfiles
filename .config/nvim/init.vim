@@ -9,6 +9,7 @@ call plug#begin()
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'neovim/nvim-lspconfig'
     Plug 'ms-jpq/coq_nvim'
+    Plug 'github/copilot.vim'
 call plug#end()
 
 set noshowmode
