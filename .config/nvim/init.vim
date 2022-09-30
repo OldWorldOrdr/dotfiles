@@ -1,5 +1,5 @@
 call plug#begin()
-    Plug 'ayu-theme/ayu-vim'
+    Plug 'OldWorldOrdr/nvim-base16'
     Plug 'goolord/alpha-nvim'
     Plug 'oldworldordr/lualine.nvim'
     Plug 'dense-analysis/ale'
@@ -12,7 +12,7 @@ call plug#end()
 
 set noshowmode
 set termguicolors
-colorscheme ayu
+colorscheme base16-classic-dark
 set number
 set autoindent
 set expandtab
@@ -107,7 +107,7 @@ lua << EOF
 
     require('lualine').setup {
         options = {
-            theme = "ayu_dark",
+            theme = "codedark",
             component_separators = '',
             section_separators = { left = '', right = '' },
         },
