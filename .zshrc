@@ -25,6 +25,6 @@ else
 fi
 
 for plug in "$CONF"/zsh/plugins/*/*.plugin.zsh; do
-    source "$plug"
+    . "$plug"
 done
 unset plug
