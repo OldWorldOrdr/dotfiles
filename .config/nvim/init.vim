@@ -1,7 +1,7 @@
 call plug#begin()
     Plug 'OldWorldOrdr/nvim-base16'
     Plug 'goolord/alpha-nvim'
-    Plug 'oldworldordr/lualine.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
     Plug 'dense-analysis/ale'
     Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
     Plug 'kyazdani42/nvim-web-devicons'
