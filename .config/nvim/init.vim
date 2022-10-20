@@ -8,6 +8,7 @@ call plug#begin()
     Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
     Plug 'kyazdani42/nvim-tree.lua'
     Plug 'github/copilot.vim'
+    Plug 'ap/vim-css-color'
 call plug#end()
 
 set noshowmode
