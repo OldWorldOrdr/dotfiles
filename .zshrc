@@ -25,9 +25,11 @@ else
 
     clear
     pfetch
+
+    for plug in "$CONF"/zsh/plugins/*/*.plugin.zsh; do
+        . "$plug"
+    done
+    unset plug
 fi
 
-for plug in "$CONF"/zsh/plugins/*/*.plugin.zsh; do
-    . "$plug"
-done
-unset plug
+
