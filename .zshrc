@@ -31,5 +31,3 @@ else
     done
     unset plug
 fi
-
-
