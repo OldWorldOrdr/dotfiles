@@ -24,6 +24,7 @@ set tabstop=4
 set mouse=a
 set dir=~/.cache/vim
 set history=1000
+set clipboard=unnamedplus
 
 lua << EOF
     require'alpha'.setup(require'alpha.themes.dashboard'.config)
