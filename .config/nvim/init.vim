@@ -18,9 +18,9 @@ set number
 set autoindent
 set expandtab
 set shiftround
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
-set tabstop=4
+set tabstop=2
 set mouse=a
 set dir=~/.cache/vim
 set history=1000
