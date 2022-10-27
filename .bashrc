@@ -10,10 +10,10 @@
 HISTFILE="$CACHE/history"
 
 if [ "$EUID" -eq 0 ]; then
-    PS1="\[\e[91m\]\w \\$ \[\e[0m\]"
+  PS1="\[\e[91m\]\w \\$ \[\e[0m\]"
 else
-    PS1="\[\e[94m\]\w \\$ \[\e[0m\]"
+  PS1="\[\e[94m\]\w \\$ \[\e[0m\]"
 
-    clear
-    pfetch
+  clear
+  pfetch
 fi
