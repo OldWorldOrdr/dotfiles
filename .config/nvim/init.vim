@@ -9,6 +9,9 @@ call plug#begin()
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'github/copilot.vim'
   Plug 'ap/vim-css-color'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'jghauser/mkdir.nvim'
+  Plug 'kdheepak/lazygit.nvim'
 call plug#end()
 
 set noshowmode
@@ -160,17 +163,12 @@ lua << EOF
       lualine_x = {},
     },
   }
-
-  local Terminal  = require('toggleterm.terminal').Terminal
-  local lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
-
-  function _lazygit_toggle()
-    lazygit:toggle()
-  end
 EOF
 
 nnoremap <silent> <C-n> :NvimTreeToggle<CR>
 nnoremap <silent> <C-o> :ToggleTerm<CR>
 nnoremap <silent> <A-,> :BufferLineCyclePrev<CR>
 nnoremap <silent> <A-.> :BufferLineCycleNext<CR>
-nnoremap <silent> <C-g> :lua _lazygit_toggle()<CR>
+nnoremap <silent> <C-g> :LazyGit<CR>
+nnoremap d "_d
+vnoremap d "_d
