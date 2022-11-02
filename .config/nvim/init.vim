@@ -29,6 +29,8 @@ set dir=~/.cache/vim
 set history=1000
 set clipboard=unnamedplus
 set guifont=CaskaydiaCove\ Nerd\ Font\ Mono
+let g:neovide_refresh_rate = 144
+let g:neovide_refresh_rate_idle = 5
 
 let g:ale_sign_error = ' x'
 let g:ale_sign_warning = ' !'
