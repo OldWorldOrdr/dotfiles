@@ -28,6 +28,10 @@ set mouse=a
 set dir=~/.cache/vim
 set history=1000
 set clipboard=unnamedplus
+set guifont=CaskaydiaCove\ Nerd\ Font\ Mono
+
+let g:ale_sign_error = ' x'
+let g:ale_sign_warning = ' !'
 
 lua << EOF
   require'alpha'.setup(require'alpha.themes.dashboard'.config)
