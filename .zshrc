@@ -5,10 +5,11 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 [ "$XDG_CONFIG_HOME" ] && CONF="$XDG_CONFIG_HOME" || CONF="$HOME/.config"
 [ "$XDG_CACHE_HOME" ] && CACHE="$XDG_CACHE_HOME" || CACHE="$HOME/.cache"
+[ "$XDG_BIN_HOME" ] && BIN="$XDG_BIN_HOME" || BIN="$HOME/.local/bin"
 
 [ -d "$CONF" ] || mkdir -p "$CONF"
 [ -d "$CACHE" ] || mkdir -p "$CACHE"
-[ -d "$CONF/bin" ] && export PATH="$CONF/bin:$PATH"
+[ -d "$BIN" ] || mkdir -p "$BIN" && export PATH="$BIN:$PATH"
 [ -f "$CONF/env" ] && . "$CONF/env"
 [ -f "$CONF/aliases" ] && . "$CONF/aliases"
 
