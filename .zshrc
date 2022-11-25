@@ -24,9 +24,9 @@ setopt appendhistory
 compinit -d "$CACHE/zcompdump"
 
 if [ "$EUID" -eq 0 ]; then
-  PROMPT=$'%{\e[91m%}%~ # %{\e[0m%}'
+  PROMPT=$'%{\e[01;31m%}%n@%M%{\e[01;34m%} %~ $%{\e[0m%} '
 else
-  PROMPT=$'%{\e[94m%}%~ $ %{\e[0m%}'
+  PROMPT=$'%{\e[01;32m%}%n@%M%{\e[01;34m%} %~ $%{\e[0m%} '
 
   clear
   pfetch
