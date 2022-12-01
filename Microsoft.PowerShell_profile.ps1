@@ -9,6 +9,7 @@ function ..... { Set-Location "../../../.." }
 
 Import-Module PSReadLine
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadlineOption -EditMode vi
 
 function prompt {
     Write-Host "$($env:username)@$(hostname) " -ForegroundColor Green -NoNewLine
