@@ -1,12 +1,3 @@
-require'alpha'.setup(require'alpha.themes.dashboard'.config)
-require("toggleterm").setup{}
-require("nvim-tree").setup()
-require("bufferline").setup{
-  options = {
-    separator_style = "slant",
-  },
-}
-
 local colors = {
   red = '#ca1243',
   grey = '#a0a1a7',
