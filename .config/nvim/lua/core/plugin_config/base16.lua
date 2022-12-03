@@ -1,2 +1,2 @@
 vim.o.termguicolors = true
-vim.cmd [[ colorscheme base16-classic-dark ]]
+vim.cmd "colorscheme base16-classic-dark"
