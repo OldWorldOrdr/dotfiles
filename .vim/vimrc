@@ -3,6 +3,7 @@ call plug#begin()
   Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
+let mapleader = " "
 set number
 set autoindent
 set expandtab
@@ -14,3 +15,7 @@ set mouse=a
 set dir=~/.cache/vim
 set viminfo=
 set backspace=indent,eol,start
+set wildmenu
+
+nnoremap d "_d
+vnoremap d "_d
