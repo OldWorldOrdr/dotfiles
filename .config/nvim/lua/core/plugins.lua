@@ -13,7 +13,6 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'github/copilot.vim'
-  use 'dense-analysis/ale'
   use 'ap/vim-css-color'
   use 'jiangmiao/auto-pairs'
   use 'akinsho/bufferline.nvim'
@@ -24,6 +23,9 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'tpope/vim-commentary'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
   if packer_bootstrap then
     require('packer').sync()
   end
