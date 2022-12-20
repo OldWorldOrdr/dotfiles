@@ -3,15 +3,33 @@ require("mason-lspconfig").setup({
   ensure_installed = { "sumneko_lua", "bashls" }
 })
 
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInformation", { text = "", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInformation", { text = " ", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
 
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+local on_attach = function(_, _)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+end
 
-require("lspconfig").sumneko_lua.setup({})
-require("lspconfig").bashls.setup({})
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require("lspconfig").sumneko_lua.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {'vim'},
+      },
+    },
+  },
+}
+
+require("lspconfig").bashls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
 
 local _border = "rounded"
 
